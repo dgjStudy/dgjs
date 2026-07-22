@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+// 커밋 확인용 주석
+
 @RestController
 @RequestMapping("/api/tables")
 @CrossOrigin(origins = "http://localhost:3000") // 리액트(dgjs_platform) 포트 허용
