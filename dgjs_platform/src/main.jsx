@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, ChevronRight } from "lucide-react";
+import { Search, ChevronRight, Plus } from "lucide-react";
 import { dummyData } from "./data";
 
 export default function DashboardView() {
@@ -41,18 +41,27 @@ export default function DashboardView() {
                     전체 데이터 수:{" "}
                     <span className="font-semibold text-[#12294d]">{dummyData.length}개</span>
                 </span>
-                <div className="relative w-72">
-                    <Search
-                        size={16}
-                        strokeWidth={2}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-                    />
-                    <input
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        placeholder="제목 / 유형 / 등록자 검색"
-                        className="w-full pl-9 pr-3 py-2 text-sm border border-slate-300 rounded-md outline-none focus:ring-2 focus:ring-[#12294d]/20 focus:border-[#12294d] transition-shadow"
-                    />
+                <div className="flex items-center gap-3">
+                    <div className="relative w-72">
+                        <Search
+                            size={16}
+                            strokeWidth={2}
+                            className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                        />
+                        <input
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="제목 / 유형 / 등록자 검색"
+                            className="w-full pl-9 pr-3 py-2 text-sm border border-slate-300 rounded-md outline-none focus:ring-2 focus:ring-[#12294d]/20 focus:border-[#12294d] transition-shadow"
+                        />
+                    </div>
+                    <button
+                        onClick={() => navigate('/create-table')}
+                        className="flex items-center gap-1.5 px-4 py-2 bg-[#12294d] text-white text-sm font-medium rounded-md hover:bg-[#1a3869] transition-colors shadow-sm"
+                    >
+                        <Plus size={16} />
+                        테이블 생성
+                    </button>
                 </div>
             </div>
 
